@@ -7,36 +7,48 @@
     <StackLayout BackgroundColor="WhiteSmoke">
 
         <CarouselView IndicatorView="MYINDICATOR">
-        
-        <CarouselView.ItemsSource>
-            <x:Array Type="{x:Type ContentView}">
-                <ContentView>
+
+            <CarouselView.ItemsSource>
+                <x:Array Type="{x:Type ContentView}">
+                    <ContentView>
                         <StackLayout   >
-                            <Label Text="birr" TextColor="Black"/>
+
+                            <Label Text="First Page"/>
+
+                            <!--when i remove the Listview, It works fine-->
+                            <ListView ItemsSource="{Binding Stocks}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout>
+                                                <Label Text="{Binding Name}"  TextColor="Black"/>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
                             
                         </StackLayout>
-                </ContentView>
-                <ContentView>
+                    </ContentView>
+                    
+                    
+                    <ContentView>
                         <StackLayout    >
-                            <Label Text="ikiii" TextColor="Black"/>
+                            <Label Text="Second Page" TextColor="Black"/>
                         </StackLayout>
-                </ContentView>
-            </x:Array>
-        </CarouselView.ItemsSource>
-        <CarouselView.ItemTemplate>
-            <DataTemplate>
-                <ContentView Content="{Binding .}" />
-            </DataTemplate>
-        </CarouselView.ItemTemplate>
-    </CarouselView>
+                    </ContentView>
+                    
+                    
+                </x:Array>
+            </CarouselView.ItemsSource>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView Content="{Binding .}" />
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
 
         <IndicatorView x:Name="MYINDICATOR" BackgroundColor="Transparent" IndicatorColor="LightGray" SelectedIndicatorColor="DarkGray" HorizontalOptions="Center" />
 
-
-
     </StackLayout>
- 
-        
-        
-  
 </ContentPage>
