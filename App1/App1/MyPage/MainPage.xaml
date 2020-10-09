@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:MyPage="clr-namespace:CAROUSELVIEW_WITH_INDICATOR.MyPage"
+             xmlns:MyPage1="clr-namespace:CAROUSELVIEW_WITH_INDICATOR"
+             x:Class="App1.MainPage">
+
+
+    <StackLayout BackgroundColor="WhiteSmoke">
+
+        <CarouselView IndicatorView="MYINDICATOR">
+
+            <CarouselView.ItemsSource>
+                <x:Array Type="{x:Type ContentView}">
+                    <ContentView>
+
+                        <MyPage1:Page1/>
+
+
+                    </ContentView>
+                    
+                    
+                    <ContentView>
+
+                        <MyPage:Page2/>
+
+                    </ContentView>
+                    
+                    
+                </x:Array>
+            </CarouselView.ItemsSource>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView Content="{Binding .}" />
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <IndicatorView x:Name="MYINDICATOR" BackgroundColor="Transparent" IndicatorColor="LightGray" SelectedIndicatorColor="DarkGray" HorizontalOptions="Center" />
+
+    </StackLayout>
+</ContentPage>

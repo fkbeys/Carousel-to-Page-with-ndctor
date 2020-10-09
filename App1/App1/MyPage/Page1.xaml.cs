@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace App1
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace CAROUSELVIEW_WITH_INDICATOR
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Page1 : ContentView
     {
-        public MainPage()
+        public Page1()
         {
             InitializeComponent();
-             
         }
     }
- 
 }
